@@ -3,11 +3,19 @@ package com.studio.youtubcom.models;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "post")
 public class Post {
     @Id
     @GeneratedValue (strategy = GenerationType.AUTO)
+    @Column(name = "id")
     private Long id;
-    private String title, anons, full_text;
+    @Column(name = "title")
+    private String title;
+    @Column(name = "anons")
+    private String anons;
+    @Column(name = "full_text")
+    private String full_text;
+    @Column(name = "views")
     private int views;
 
     public Post() {
