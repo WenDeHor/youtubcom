@@ -12,10 +12,14 @@ public class MainController {
         model.addAttribute("title", "Main paige");
         return "home";
     }
-    @GetMapping("/about")
-    public String about(Model model) {
-        model.addAttribute("title", "Сторінка про нас");
-        return "about";
-    }
 
+    //    @GetMapping("/about")
+//    public String about(Model model) {
+//        model.addAttribute("title", "Сторінка про нас");
+//        return "about";
+//    }
+    @GetMapping("/about")
+    public String about() {
+        return "/about";
+    }
 }
