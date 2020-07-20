@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="an">
+<head>
+    <title th:text="${title}"></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+
+<header th:insert="blocks/headerFirst::header"></header>
+<main role="main">
+
+    <section class="jumbotron text-center" style="background-color: rgba(230,132,55,0.36)">
+        <div class="title mont">
+            <h1>Пилок різнотравя</h1>
+        </div>
+    </section>
+
+    <div class="row">
+        <div class="album col-md-12 bg-light" style="background-color: bisque">
+            <div class="nav justify-content-center">
+                          <div class="row col-md-12 mb-12">
+
+                    <div class="rounded mx-auto d-block ">
+                        <div>
+                            <img alt="med" width="100%"
+                                 src="https://ua.all.biz/img/ua/catalog/3063892.jpeg"
+                                 class="img-fluid ">
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+                        <h2>
+                            <div> Весняний пилок зібраний з власної пасіки у 2020 році. Свіжий, чистий, такий як є на
+                                фото. Висушений при температурі 40 градусів на спеціальному обладнанні
+                            </div>
+                            <br>
+                            <div>
+                                Також є пилок з гречки та соняшника.
+                            </div>
+                            <br>
+                            <div>
+                                *Пилок розфасований в zip-пакети та пластикові бутилки
+                                !!! При замовлені від 1000 грн - доставка безкоштовна
+                            </div>
+                            <br>
+                            <div>Відправлення здійснюється новотою та укр-поштою, по всій території України. Оплата
+                                при отриманні.
+                            </div>
+                            <br>
+                            <div>Є питання? Телефонуйте, буду радий поспілкуватися.</div><br>
+                        <div>
+                            <a href="https://uk.wikipedia.org/wiki/%D0%9F%D0%B8%D0%BB%D0%BE%D0%BA">Вікапедія</a>
+                        </div>
+                        <br>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</main>
+<div th:insert="blocks/footer::footer"></div>
+</body>
+</html>

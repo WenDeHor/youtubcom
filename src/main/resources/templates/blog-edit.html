@@ -10,7 +10,7 @@
 
 <div class="content mt-5 mb-5">
     <h3> Добавляємо статтю</h3>
-    <div th:each="el:${post}">
+    <div  class="mt-5" th:each="el:${post}">
         <form method="post">
             <input type="text" th:value="${el.title}" name="title" placeholder="Введіть назву статї" class="form-control"><br>
             <input type="text" th:value="${el.anons}"name="anons" placeholder="Введіть анонс статї" class="form-control"><br>

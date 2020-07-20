@@ -6,14 +6,16 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 </head>
 <body>
+
 <header th:insert="blocks/headerFirst::header"></header>
+
 
 <!--<img alt="Office L icon" src="https://img.icons8.com/officel/2x/filled-star.png" style="height: 64px; width: 64px;">-->
 
 <main role="main">
 
-    <section class="jumbotron text-center" style="background-color: lightblue">
-        <div class="container">
+    <section class="jumbotron text-center" style="background-color: rgba(230,132,55,0.36)">
+        <div class="title mont">
             <h1>Мед гречаний, липовий, соняшниковий та із золотарника. Прополіс та пилок</h1>
         </div>
     </section>
@@ -28,7 +30,7 @@
 
                     <div class="col-md-4 mb-4">
                         <div>
-                            <img alt="med"
+                            <img alt="med" width="100%"
                                  src="https://cdnimg.rg.ru/img/content/168/58/73/iStock-887517012_d_850.jpg"
                                  class="img-fluid ">
                         </div>
@@ -38,15 +40,16 @@
                             <h2> Мед гречаний, липовий, соняшниковий та із золотарника</h2>
                         </div>
                         <div class="d-flex justify-content-between align-items-center ">
-                            <a class="btn btn-primary mt-auto" href="/about" role="button">Ознайомитись із продуктом</a>
+                            <a class="btn btn-primary mt-auto" href="/honeyPage" role="button">Ознайомитись із
+                                продуктом</a>
                         </div>
                     </div>
 
 
                     <div class="col-md-4 mb-4">
                         <div>
-                            <img alt="pill"
-                                 src="https://cdnimg.rg.ru/img/content/168/58/73/iStock-887517012_d_850.jpg"
+                            <img alt="pill" width="100%"
+                                 src="https://ua.all.biz/img/ua/catalog/3063892.jpeg"
                                  class="img-fluid ">
                         </div>
 
@@ -56,36 +59,39 @@
                         </div>
 
                         <div class="d-flex justify-content-between align-items-center ">
-                            <a class="btn btn-primary mt-auto" href="/about" role="button">Ознайомитись із продуктом</a>
+                            <a class="btn btn-primary mt-auto" href="/pollenPage" role="button">Ознайомитись із продуктом</a>
                         </div>
                     </div>
 
 
                     <div class="col-md-4 mb-4">
                         <div>
-                            <img alt="prop"
-                                 src="https://cdnimg.rg.ru/img/content/168/58/73/iStock-887517012_d_850.jpg"
+                            <img alt="prop" width="100%"
+                                 src="https://coteruche.com/presta/img/cms/propolis.jpg"
                                  class="img-fluid ">
                         </div>
 
                         <div class="card-body">
                             <p class="card-text">
-                            <h2>Прополіс весняний</h2>
+                            <h2>Прополіс</h2>
                         </div>
 
                         <div class="d-flex justify-content-between align-items-center ">
-                            <a class="btn btn-primary mt-auto" href="/about" role="button">Ознайомитись із продуктом</a>
+                            <a class="btn btn-primary mt-auto" href="/propolisPage" role="button">Ознайомитись із продуктом</a>
                         </div>
 
                     </div>
 
-                </div>
+
+
+
             </div>
         </div>
-        <div th:insert="blocks/footer::footer"></div>
+
     </div>
 
-
+    </div>
 </main>
+<div class="p-12" th:insert="blocks/footer::footer"></div>
 </body>
 </html>
