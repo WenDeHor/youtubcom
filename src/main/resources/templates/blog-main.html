@@ -8,13 +8,18 @@
 <body>
 <header th:insert="blocks/hederSecond::header"></header>
 
+<section class="jumbotron text-center" style="background-color: rgba(230,132,55,0.36)">
+    <div class="title mont">
+        <h1>Клієнтський журнал</h1>
+    </div>
+</section>
+
 <div class="content mt-5">
-    <h3> Блог сайта</h3>
-    <div th:each="el:${posts}" class="alert alert-info mt-2">
+      <div th:each="el:${posts}" class="alert alert-info mt-2">
         <h3 th:text="${el.title}"/>
         <p th:text="${el.anons}"/>
         <p th:text="${el.full_text}"/>
-        <a th:href="'/blog/'+${el.id}" class="btn btn-warning">Детальніше</a>
+<!--        <a th:href="'/blog/'+${el.id}" class="btn btn-warning">Детальніше</a>-->
     </div>
 
 

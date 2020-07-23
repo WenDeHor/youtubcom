@@ -1,4 +1,5 @@
-
+drop table post;
+drop sequence if exists global_seq;
 CREATE SEQUENCE global_seq START WITH 10;
 CREATE TABLE post
 (

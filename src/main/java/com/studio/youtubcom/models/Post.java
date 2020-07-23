@@ -1,6 +1,7 @@
 package com.studio.youtubcom.models;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "post")
@@ -9,14 +10,19 @@ public class Post {
     @GeneratedValue (strategy = GenerationType.AUTO)
     @Column(name = "id")
     private Long id;
+
     @Column(name = "title")
+    @Size(min = 0, max = 500)
     private String title;
+
     @Column(name = "anons")
+    @Size(min = 0, max = 500)
     private String anons;
+
     @Column(name = "full_text")
+    @Size(min = 0, max = 500)
     private String full_text;
-    @Column(name = "views")
-    private int views;
+
 
     public Post() {
     }
@@ -59,11 +65,5 @@ public class Post {
         this.full_text = full_text;
     }
 
-    public int getViews() {
-        return views;
-    }
 
-    public void setViews(int views) {
-        this.views = views;
-    }
 }
