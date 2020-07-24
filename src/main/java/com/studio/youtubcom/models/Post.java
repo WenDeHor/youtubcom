@@ -12,11 +12,11 @@ public class Post {
     private Long id;
 
     @Column(name = "title")
-    @Size(min = 0, max = 500)
+    @Size(min = 0, max = 50)
     private String title;
 
     @Column(name = "anons")
-    @Size(min = 0, max = 500)
+    @Size(min = 0, max = 150)
     private String anons;
 
     @Column(name = "full_text")
