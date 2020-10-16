@@ -1,4 +1,4 @@
-package com.studio.youtubcom.repo;
+package com.studio.youtubcom.repository;
 
 import com.studio.youtubcom.models.Post;
 import org.springframework.data.repository.CrudRepository;

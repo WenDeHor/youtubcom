@@ -1,7 +1,7 @@
 package com.studio.youtubcom.controllers;
 
 import com.studio.youtubcom.models.Post;
-import com.studio.youtubcom.repo.PostRepository;
+import com.studio.youtubcom.repository.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

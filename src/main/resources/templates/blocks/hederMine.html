@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="an">
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+
+<style type="text" th:src="static/style.css"></style>
+<style type="script" th:src="templates/bools/js/script.js"></style>
+
+<div th:fragment="header">
+
+    <nav class="navbar navbar-expand-lg navbar-light " style="background-color: rgba(196,246,255,0.34)">
+
+        <!--                logo-->
+        <a href="/" class="site-logo-link left-container" rel="home" itemprop="url"><img src="templates/img/logo3.png"
+                                                                                         height="40"
+                                                                                         alt=""> </a>
+        <div class="container-fluid">
+
+            <div class="container-fluid"><br>
+
+                <!--                <a class="navbar-brand" href="/"></a>-->
+
+
+                <!--                    navbar-toggler-->
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+
+                        <!--                        <li class="nav-item active">-->
+                        <!--                            <a class="nav-link" href="#">TO WRITE A LETTER <span class="sr-only">(current)</span></a>-->
+                        <!--                        </li>-->
+                        <li class="nav-item"><a class="nav-link" href="#">MUSIC</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">VIDEO</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">STORIES</a>
+                        </li>
+
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                CATEGORIES
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                                <a class="dropdown-item" href="/photoPage">GALLERY PHOTO</a>
+                                <a class="dropdown-item" href="#">HOTELS AND HOSTELS</a>
+                                <a class="dropdown-item" href="#">TOURIST ROUTES</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="https://www.lyrarc.com">WORLD NEWS</a>
+                                <a class="dropdown-item"
+                                   href="https://www.metservice.com/national?gclid=CjwKCAjwps75BRAcEiwAEiACMaqatm4uZcJI6-SY9mcQY_QsaMd7oBuhlcgrMvizDqOjYut5wCOk6xoCsjQQAvD_BwE">WEATHER</a>
+
+
+                            </div>
+                        </li>
+
+                    </ul>
+
+                    <!--                Search-->
+                    <form class="form-inline form-navbar my-2 my-lg-0 order-2" action="/">
+                        <label>
+                            <input class="form-control" name="s" type="text" placeholder="Search">
+                        </label>
+                    </form>
+
+<!--                    <ul class="navbar-nav d-none d-lg-flex ml-2 order-3">-->
+<!--                        <li class="nav-item"><a class="nav-link" href="/login">Sign in</a></li>-->
+<!--                        <li class="nav-item"><a class="nav-link" href="/signUp">Sign up</a></li>-->
+<!--                    </ul>-->
+<!--                    <ul class="navbar-nav d-lg-none">-->
+<!--                        <li class="nav-item-divider"></li>-->
+<!--                        <li class="nav-item"><a class="nav-link" href="/login">Sign in</a></li>-->
+<!--                        <li class="nav-item"><a class="nav-link" href="/signUp">Sign up</a></li>-->
+<!--                    </ul>-->
+                    <!--                    <form class="form-inline my-2 my-lg-0">-->
+                    <!--                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">-->
+                    <!--                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
+                    <!--                    </form>-->
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <!--    <nav class="navbar navbar-expand-lg navbar-light">-->
+    <!--        <div class="container"><a href="/" class="navbar-brand">WEN DE HOR TRAVEL</a>-->
+    <!--            <div class="d-flex ml-auto">-->
+    <!--                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#globalNavbar"-->
+    <!--                        aria-controls="globalNavbar" aria-expanded="false" aria-label="Toggle navigation"><span-->
+    <!--                        class="navbar-toggler-icon"></span></button>-->
+    <!--            </div>-->
+    <!--            <div class="collapse navbar-collapse" id="globalNavbar">-->
+
+
+    <!--                <ul class="navbar-nav mr-auto order-1">-->
+    <!--                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink"-->
+    <!--                                                     href="#" data-toggle="dropdown" aria-haspopup="true"-->
+    <!--                                                     aria-expanded="false">CATEGORIES</a>-->
+    <!--                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">-->
+    <!--                            <div class="navbar-collapse navbar-top-collapse">-->
+    <!--                                <ul id="menu-top-menu" class="nav navbar-nav">-->
+    <!--                                    <li class="dropdown-item"><a href="#">GALLERY MUSIC</a></li>-->
+    <!--                                    <li class="dropdown-item"><a href="#">NEW ZEALAND</a></li>-->
+    <!--                                    <li class="dropdown-item"><a href="#">GALLERY PHOTO</a></li>-->
+    <!--                                    <li class="dropdown-item"><a href="#">GALLERY VIDEO</a></li>-->
+    <!--                                    <li class="dropdown-item"><a href="#">TOURIST ROUTES</a></li>-->
+    <!--                                    <li class="dropdown-item"><a href="#">ABOUT COUNTRIES</a></li>-->
+    <!--                                </ul>-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+    <!--                    </li>-->
+    <!--                    <li class="nav-item"><a class="nav-link" href="#">TO WRITE A LETTER</a></li>-->
+    <!--                    <li class="nav-item"><a class="nav-link" href="#">WORLD NEWS</a></li>-->
+    <!--                    <li class="nav-item"><a class="nav-link" href="#">WEATHER</a></li>-->
+    <!--                </ul>-->
+    <!--                <ul class="navbar-nav d-none d-lg-flex ml-2 order-3">-->
+    <!--                    <li class="nav-item"><a class="nav-link" href="#">Sign in</a></li>-->
+    <!--                    <li class="nav-item"><a class="nav-link" href="#">Sign up</a></li>-->
+    <!--                </ul>-->
+    <!--                <ul class="navbar-nav d-lg-none">-->
+    <!--                    <li class="nav-item-divider"></li>-->
+    <!--                    <li class="nav-item"><a class="nav-link" href="#">Sign in</a></li>-->
+    <!--                    <li class="nav-item"><a class="nav-link" href="#">Sign up</a></li>-->
+    <!--                </ul>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </nav>-->
+</div>
