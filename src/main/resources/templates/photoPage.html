@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html" lang="an">
+<head>
+    <title th:text="${title}"></title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <!--   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">-->
+
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+            integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+            crossorigin="anonymous"></script>
+    <script type="text/javascript" src="blocks/js/script.js"></script>
+
+</head>
+
+<header th:insert="blocks/hederMine::header"></header>
+
+<div>
+    <form action="/logout" method="post">
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+        <input type="submit" value="Sign Out"/>
+    </form>
+</div>
+
+<section class="jumbotron " style="background-color: rgba(196,246,255,0.34)">
+    <h2>
+        <p class="font-weight-bold text-uppercase text-center">Adventures. Views. Colors and emotions</p>
+    </h2>
+
+    <h4>
+        <p class="text-center">Walk confidently to meet the world. Turn the music to full. Put on headphones and go with
+            me on the phone, TV and on the Internet. Feel the surge of energy.</p>
+    </h4>
+</section>
+
+<div class="row">
+    <div class="album col-md-12 bg-light" style="background-color: bisque">
+        <div class="nav justify-content-center">
+
+            <div class="row col-md-12">
+
+                <div class="col-md-4">
+                    <img src="templates/img/рh23.jpg" class="img-thumbnail" alt="name" width="100%" height="100%">
+                    <div class="carousel-caption ">
+                        <h5>Te Waipounnamu. South Island</h5>
+                        <p>Picturesque spaces</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <img src="templates/img/рh23.jpg" class="img-thumbnail" alt="name" width="100%" height="100%">
+                    <div class="carousel-caption ">
+                        <h5>Te Waipounnamu. South Island</h5>
+                        <p>Picturesque spaces</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <img src="templates/img/рh23.jpg" class="img-thumbnail" alt="name" width="100%" height="100%">
+                    <div class="carousel-caption ">
+                        <h5>Te Waipounnamu. South Island</h5>
+                        <p>Picturesque spaces</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <img src="templates/img/рh23.jpg" class="img-thumbnail" alt="name" width="100%" height="100%">
+                    <div class="carousel-caption ">
+                        <h5>Te Waipounnamu. South Island</h5>
+                        <p>Picturesque spaces</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <img src="templates/img/рh23.jpg" class="img-thumbnail" alt="name" width="100%" height="100%">
+                    <div class="carousel-caption ">
+                        <h5>Te Waipounnamu. South Island</h5>
+                        <p>Picturesque spaces</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <img src="templates/img/рh23.jpg" class="img-thumbnail" alt="name" width="100%" height="100%">
+                    <div class="carousel-caption ">
+                        <h5>Te Waipounnamu. South Island</h5>
+                        <p>Picturesque spaces</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <img src="templates/img/рh23.jpg" class="img-thumbnail" alt="name" width="100%" height="100%">
+                    <div class="carousel-caption ">
+                        <h5>Te Waipounnamu. South Island</h5>
+                        <p>Picturesque spaces</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <img src="templates/img/рh23.jpg" class="img-thumbnail" alt="name" width="100%" height="100%">
+                    <div class="carousel-caption ">
+                        <h5>Te Waipounnamu. South Island</h5>
+                        <p>Picturesque spaces</p>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+        </div>
+    </div>
+
+</div>
+
+</div> <br>
+
+<header th:insert="blocks/videoSlider::slider"></header>
+<footer th:insert="blocks/footerFirst::footer"></footer>
+</html>

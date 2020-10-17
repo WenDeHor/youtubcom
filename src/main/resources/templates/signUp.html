@@ -1,0 +1,39 @@
+<#ftl encoding='UTF-8'>
+<html>
+<head>
+<!--    <link href="/css/styles.css" rel="stylesheet">-->
+<!--    <link href="/css/bootstrap.min.css" rel="stylesheet"/>-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body>
+<div class="form-style-2">
+    <div class="form-style-2-heading">
+        Зарегистрируйтесь!
+    </div>
+    <form method="post" action="/signUp">
+        <label for="login">login
+            <input class="input-field" type="text" id="login" name="login">
+        </label>
+        <br>
+        <label for="password">password
+            <input class="input-field" type="password" id="password" name="password">
+        </label>
+        <br>
+        <label for="email">email
+            <input class="input-field"  id="email" name="email">
+        </label>
+        <br>
+
+              <input type="submit" value="SignUp">
+<!--        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>-->
+        <br>
+
+
+    </form>
+</div>
+</body>
+</html>
+
+
+

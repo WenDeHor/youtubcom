@@ -1,97 +1,58 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org" lang="an">
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html" lang="an">
 <head>
     <title th:text="${title}"></title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-</head>
-<body>
+    <!--   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">-->
 
-<header th:insert="blocks/headerFirst::header"></header>
-
-
-<!--<img alt="Office L icon" src="https://img.icons8.com/officel/2x/filled-star.png" style="height: 64px; width: 64px;">-->
-
-<main role="main">
-
-    <section class="jumbotron text-center" style="background-color: rgba(230,132,55,0.36)">
-        <div class="title mont">
-            <h1>Мед гречаний, липовий, соняшниковий та із золотарника. Прополіс та пилок</h1>
-        </div>
-    </section>
-
-    <div class="row">
-        <div class="album col-md-12 bg-light" style="background-color: bisque">
-            <div class="nav justify-content-center">
-                <!--                <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-10 mb-3 bg-bisque border-bottom shadow-sm "-->
-
-
-                <div class="row col-md-12 mb-12">
-
-                    <div class="col-md-4 mb-4">
-                        <div>
-                            <img alt="med" width="100%"
-                                 src="https://cdnimg.rg.ru/img/content/168/58/73/iStock-887517012_d_850.jpg"
-                                 class="img-fluid ">
-                        </div>
-
-                        <div class="card-body">
-                            <p class="card-text">
-                            <h2> Мед гречаний, липовий, соняшниковий та із золотарника</h2>
-                        </div>
-                        <div class="d-flex justify-content-between align-items-center ">
-                            <a class="btn btn-primary mt-auto" href="/honeyPage" role="button">Ознайомитись із
-                                продуктом</a>
-                        </div>
-                    </div>
-
-
-                    <div class="col-md-4 mb-4">
-                        <div>
-                            <img alt="pill" width="100%"
-                                 src="https://ua.all.biz/img/ua/catalog/3063892.jpeg"
-                                 class="img-fluid ">
-                        </div>
-
-                        <div class="card-body">
-                            <p class="card-text">
-                            <h2>Пилок різнотравя</h2>
-                        </div>
-
-                        <div class="d-flex justify-content-between align-items-center ">
-                            <a class="btn btn-primary mt-auto" href="/pollenPage" role="button">Ознайомитись із продуктом</a>
-                        </div>
-                    </div>
-
-
-                    <div class="col-md-4 mb-4">
-                        <div>
-                            <img alt="prop" width="100%"
-                                 src="https://coteruche.com/presta/img/cms/propolis.jpg"
-                                 class="img-fluid ">
-                        </div>
-
-                        <div class="card-body">
-                            <p class="card-text">
-                            <h2>Прополіс</h2>
-                        </div>
-
-                        <div class="d-flex justify-content-between align-items-center ">
-                            <a class="btn btn-primary mt-auto" href="/propolisPage" role="button">Ознайомитись із продуктом</a>
-                        </div>
-
-                    </div>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+ </head>
 
 
 
+<header th:insert="blocks/hederMine::header"></header><br>
+<header th:insert="blocks/photoSlider::slider"></header><br>
+
+<section class="jumbotron " style="background-color: rgba(196,246,255,0.34)">
+    <h2>
+        <p class="font-weight-bold text-uppercase text-center">Travel details and adventures</p>
+    </h2>
+
+    <h4>
+        <p class="text-center">The first steps on unknown paths. Be the first. Feel the breath of our world. Open the door to the world. Go on a journey. </p>
+    </h4>
+</section>
+
+<div class="row">
+    <div class="album col-md-12 bg-light" style="background-color: bisque">
+        <div class="nav justify-content-center">
+
+            <div class="row col-md-12">
+
+                <div class="col-md-4">
+                    <img src="images/рh23.jpg" class="img-circle" alt="name" width="100%" height="100%">
+                </div>
+                <div class="col-md-4">
+                    <img src="images/рh24.jpg" class="img-circle" alt="name" width="100%" height="100%">
+                </div>
+                <div class="col-md-4">
+                    <img src="images/рh25.jpg" class="img-circle" alt="name" width="100%" height="100%">
+                </div>
 
             </div>
         </div>
 
     </div>
 
-    </div>
-</main>
-<div class="p-12" th:insert="blocks/footer::footer"></div>
-</body>
+</div> <br>
+
+<!--<img alt="Office L icon" src="META-INF/107716478_1591761084319018_6747217224295558277_n.jpg" style="height: 64px; width: 64px;">-->
+<header th:insert="blocks/videoSlider::slider"></header>
+<footer th:insert="blocks/footerFirst::footer"></footer>
 </html>
+
+<!--<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-binoculars-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">-->
+<!--    <path d="M4.5 1A1.5 1.5 0 0 0 3 2.5V3h4v-.5A1.5 1.5 0 0 0 5.5 1h-1zM7 4v1h2V4h4v.882a.5.5 0 0 0 .276.447l.895.447A1.5 1.5 0 0 1 15 7.118V13H9v-1.5a.5.5 0 0 1 .146-.354l.854-.853V9.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v.793l.854.853A.5.5 0 0 1 7 11.5V13H1V7.118a1.5 1.5 0 0 1 .83-1.342l.894-.447A.5.5 0 0 0 3 4.882V4h4zM1 14v.5A1.5 1.5 0 0 0 2.5 16h3A1.5 1.5 0 0 0 7 14.5V14H1zm8 0v.5a1.5 1.5 0 0 0 1.5 1.5h3a1.5 1.5 0 0 0 1.5-1.5V14H9zm4-11H9v-.5A1.5 1.5 0 0 1 10.5 1h1A1.5 1.5 0 0 1 13 2.5V3z"/>-->
+<!--</svg>-->

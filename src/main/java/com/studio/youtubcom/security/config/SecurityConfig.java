@@ -8,6 +8,7 @@ import org.springframework.security.authentication.dao.DaoAuthenticationProvider
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -32,7 +33,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/", "/signUp", "/photoPage", "/honeyPage","/pollenPage","/propolisPage","/pricePage", "/resources/**", "/static/**", "/templates/**", "/img/**").permitAll()
+                .antMatchers("/", "/signUp").permitAll()
+                .antMatchers("/images/*").permitAll()
+//                .antMatchers("/resources/**", "/static/**", "/img/**", "/*.jpg", "/*.png").permitAll()
                 .anyRequest()
                 .authenticated()
                 .and()
@@ -49,6 +52,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .logoutSuccessUrl("/");
     }
 
+    @Override
+    public void configure(WebSecurity web) throws Exception {
+        web.ignoring().antMatchers("/*.css");
+        web.ignoring().antMatchers("/*.jpg");
+    }
 //    @Override
 //    protected void configure(HttpSecurity http) throws Exception {
 //        http
