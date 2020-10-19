@@ -33,30 +33,36 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable()
                 .authorizeRequests()
+                .antMatchers("/resources/*", "/static/*", "/css/*", "/*.css", "/templates/*", "/blocks/*").permitAll()
                 .antMatchers("/", "/signUp").permitAll()
-                .antMatchers("/images/*").permitAll()
-//                .antMatchers("/resources/**", "/static/**", "/img/**", "/*.jpg", "/*.png").permitAll()
+                .antMatchers("/images/*", "/*.jpg", "/*.png").permitAll()
                 .anyRequest()
                 .authenticated()
                 .and()
                 .formLogin()
                 .loginPage("/login").permitAll()
-                .defaultSuccessUrl("/success")
-//                .successForwardUrl("/auth/success")
+                .defaultSuccessUrl("/")
                 .and()
+                // logout
                 .logout()
-                .logoutRequestMatcher(new AntPathRequestMatcher("/logout", "POST"))
+                .logoutRequestMatcher(new AntPathRequestMatcher("/logout","POST"))
                 .invalidateHttpSession(true)
                 .clearAuthentication(true)
                 .deleteCookies("JSESSIONID")
                 .logoutSuccessUrl("/");
     }
 
-    @Override
-    public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers("/*.css");
-        web.ignoring().antMatchers("/*.jpg");
-    }
+//    @Override
+//    public void configure(WebSecurity web) throws Exception {
+////        web.ignoring().antMatchers("#carouselExampleIndicators");
+////        web.ignoring().antMatchers("/#carouselExampleIndicators");
+////        web.ignoring().antMatchers("/*.css");
+//        web.ignoring().antMatchers("/hederMine.html");
+//        web.ignoring().antMatchers("/photoSlider.html");
+//        web.ignoring().antMatchers("/*.css");
+//        web.ignoring().antMatchers("/*.jpg");
+//        web.ignoring().antMatchers("/*.png");
+//    }
 //    @Override
 //    protected void configure(HttpSecurity http) throws Exception {
 //        http

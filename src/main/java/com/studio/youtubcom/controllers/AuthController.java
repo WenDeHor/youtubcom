@@ -23,10 +23,10 @@ public class AuthController {
 
     @GetMapping("/login")
     public String getLoginPage(Authentication authentication, ModelMap model, HttpServletRequest request) {
+
         if (authentication != null) {
             return "redirect:/";
-        }
-        else if (request.getParameterMap().containsKey("error")) {
+        } else if (request.getParameterMap().containsKey("error")) {
             model.addAttribute("error", true);
         }
         model.addAttribute("title", "login");
@@ -34,7 +34,7 @@ public class AuthController {
     }
 
     @PostMapping("/logout")
-    public String postLogout(Model model){
+    public String postLogout(Model model) {
 //        model.addAttribute("title", true);
         return "/";
     }
@@ -43,11 +43,12 @@ public class AuthController {
     public String getSuccessPage(Authentication authentication) {
         UserDetailsImpl details = (UserDetailsImpl) authentication.getPrincipal();
         String userRole = details.getAuthorities().toString();
+        System.out.println(userRole + details.getUsername() + details.getPassword() + " not enter");
         if (userRole.equals("[USER]")) {
-            System.out.println(userRole+details.getUsername()+" is enter");
+            System.out.println(userRole + details.getUsername() + " is enter");
             return "success";
-        } else  {
-            System.out.println(userRole+details.getUsername()+" is enter");
+        } else {
+            System.out.println(userRole + details.getUsername() + " is enter");
             return "redirect:/";
         }
 
