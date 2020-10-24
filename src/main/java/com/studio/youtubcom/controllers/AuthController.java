@@ -36,7 +36,7 @@ public class AuthController {
     @PostMapping("/logout")
     public String postLogout(Model model) {
 //        model.addAttribute("title", true);
-        return "/";
+        return "redirect:/";
     }
 
     @GetMapping("/success")
@@ -44,12 +44,12 @@ public class AuthController {
         UserDetailsImpl details = (UserDetailsImpl) authentication.getPrincipal();
         String userRole = details.getAuthorities().toString();
         System.out.println(userRole + details.getUsername() + details.getPassword() + " not enter");
-        if (userRole.equals("[USER]")) {
-            System.out.println(userRole + details.getUsername() + " is enter");
+        if (userRole.equals("[USER]")||userRole.equals("USER")) {
+            System.out.println(userRole + details.getUsername() +details.getAuthorities()+ " is enter");
             return "success";
         } else {
-            System.out.println(userRole + details.getUsername() + " is enter");
-            return "redirect:/";
+            System.out.println(userRole + details.getUsername() +details.getAuthorities()+ " is enter");
+            return "photoPage";
         }
 
     }

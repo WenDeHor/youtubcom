@@ -1,13 +1,47 @@
-<html lang="en">
+<!DOCTYPE HTML>
+<!--<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html" lang="an">-->
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
-    <meta charset="utf-8">
-    <title>Login Customer</title>
+    <title th:text="${title}"></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <!--   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">-->
+
+    <!-- CSS only -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
           integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+            integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+            crossorigin="anonymous"></script>
+    <script type="text/javascript" src="blocks/js/script.js"></script>
+
 </head>
+
+<header th:insert="blocks/hederMine::header"></header>
+<br>
+
 <body>
 <div class="container">
     <form class="form-signin" method="post" action="/login">
+        <!-- error message -->
+        <div th:if="${param.error}">
+            <div class="alert alert-danger">Invalid username or
+                password.
+            </div>
+        </div>
+        <!-- logout message -->
+        <div th:if="${param.logout}">
+            <div class="alert alert-info">You have been logged out.</div>
+        </div>
+
         <h2 class="form-signin-heading">Login</h2>
         <p>
             <label for="username">Username</label>
@@ -19,128 +53,14 @@
         </p>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
     </form>
+
+    <div class="form-group">
+						<span>New user? <a href="/signUp">Register
+								here</a></span>
+    </div>
 </div>
 </body>
+<footer th:insert="blocks/footerFirst::footer"></footer>
 </html>
 
 
-
-<!--<!DOCTYPE HTML>-->
-<!--&lt;!&ndash;<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html" lang="an">&ndash;&gt;-->
-<!--<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"-->
-<!--      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
-<!--      lang="en">-->
-<!--<head>-->
-<!--    <title th:text="${title}"></title>-->
-<!--    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>-->
-<!--       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">-->
-
-<!--    &lt;!&ndash; CSS only &ndash;&gt;-->
-<!--&lt;!&ndash;        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"&ndash;&gt;-->
-<!--&lt;!&ndash;              integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">&ndash;&gt;-->
-
-
-<!--&lt;!&ndash;        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"&ndash;&gt;-->
-<!--&lt;!&ndash;                integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"&ndash;&gt;-->
-<!--&lt;!&ndash;                crossorigin="anonymous"></script>&ndash;&gt;-->
-
-
-<!--</head>-->
-
-<!--<body>-->
-<!--&lt;!&ndash;<#if error??>&ndash;&gt;-->
-<!--&lt;!&ndash;<div class="alert alert-danger" role="alert">Логин или пароль введены неверно</div>&ndash;&gt;-->
-<!--&lt;!&ndash;</#if>&ndash;&gt;-->
-<!--&lt;!&ndash;<header th:insert="blocks/hederMine::header"></header>&ndash;&gt;-->
-<!--<br>-->
-
-<!--<section class="jumbotron " style="background-color: rgba(196,246,255,0.34)">-->
-<!--    <h2>-->
-<!--        <p class="font-weight-bold text-uppercase text-center">LOGIN TO THE PAGE</p>-->
-<!--    </h2>-->
-
-<!--    <h4>-->
-<!--        <p class="text-center">To register, please enter your email last name and first name. It is allowed to register-->
-<!--            under pseudonyms. The password must contain letters and numbers. </p>-->
-<!--    </h4>-->
-<!--</section>-->
-
-
-<!--<div class="row">-->
-<!--    <div class="alert col-md-12 bg-light" style="background-color: bisque">-->
-<!--        <div class="nav justify-content-center">-->
-<!--            <div class="col-md-6">-->
-<!--                &lt;!&ndash;error&ndash;&gt;-->
-<!--                <div class="row col-md-12">-->
-<!--                    <div class="col-md-12">-->
-<!--                                               <div th:if="${param.error}">-->
-<!--                            <div class="alert alert-danger" role="alert"> Invalid username or password.</div>-->
-<!--                        </div>-->
-<!--                        <div th:if="${param.logout}">-->
-<!--                            <div class="font-weight-bold text-uppercase text-center" role="alert">You have been logged-->
-<!--                                out.-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <br>-->
-
-<!--                    <form  method="post">-->
-<!--                        <label for="email">Your login</label>-->
-<!--                        <input class="form-control" type="text" id="email" placeholder="Enter email">-->
-<!--                        <small id="emailHelp" class="form-text text-muted">We'll never share your login with anyone-->
-<!--                            else.</small>-->
-<!--                        <label for="password">Password</label>-->
-<!--                        <input class="form-control" id="password"-->
-<!--                               placeholder="Password">-->
-<!--                        <input type="submit" value="Login">-->
-<!--                    </form>-->
-
-<!--&lt;!&ndash;                    <div class="container">&ndash;&gt;-->
-<!--&lt;!&ndash;                        <form class="form-signin" method="post" action="/login">&ndash;&gt;-->
-<!--&lt;!&ndash;                            <h2 class="form-signin-heading">Login</h2>&ndash;&gt;-->
-<!--&lt;!&ndash;                            <p>&ndash;&gt;-->
-<!--&lt;!&ndash;                                <label for="email">EMAIL</label>&ndash;&gt;-->
-<!--&lt;!&ndash;                                <input type="text" id="email" name="email" class="form-control" placeholder="Email"&ndash;&gt;-->
-<!--&lt;!&ndash;                                       required>&ndash;&gt;-->
-<!--&lt;!&ndash;                            </p>&ndash;&gt;-->
-<!--&lt;!&ndash;                            <p>&ndash;&gt;-->
-<!--&lt;!&ndash;                                <label for="password">PASSWORD</label>&ndash;&gt;-->
-<!--&lt;!&ndash;                                <input type="password" id="password" name="password" class="form-control"&ndash;&gt;-->
-<!--&lt;!&ndash;                                       placeholder="Password" required>&ndash;&gt;-->
-<!--&lt;!&ndash;                            </p>&ndash;&gt;-->
-<!--&lt;!&ndash;                            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>&ndash;&gt;-->
-<!--&lt;!&ndash;                        </form>&ndash;&gt;-->
-<!--                    </div>-->
-<!--                </div>-->
-
-
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
-<!--</body>-->
-<!--&lt;!&ndash;<footer th:insert="blocks/footerFirst::footer"></footer>&ndash;&gt;-->
-<!--</html>-->
-
-<!--&lt;!&ndash;<html lang="en">&ndash;&gt;-->
-<!--&lt;!&ndash;<head>&ndash;&gt;-->
-<!--&lt;!&ndash;    <meta charset="utf-8">&ndash;&gt;-->
-<!--&lt;!&ndash;    <title>Login Customer</title>&ndash;&gt;-->
-<!--&lt;!&ndash;</head>&ndash;&gt;-->
-<!--&lt;!&ndash;<body>&ndash;&gt;-->
-<!--&lt;!&ndash;<div class="container">&ndash;&gt;-->
-<!--&lt;!&ndash;    <form class="form-signin" method="post" action="/auth/login">&ndash;&gt;-->
-<!--&lt;!&ndash;        <h2 class="form-signin-heading">Login</h2>&ndash;&gt;-->
-<!--&lt;!&ndash;        <p>&ndash;&gt;-->
-<!--&lt;!&ndash;            <label for="username">Username</label>&ndash;&gt;-->
-<!--&lt;!&ndash;            <input type="text" id="username" name="username" class="form-control" placeholder="Username" required>&ndash;&gt;-->
-<!--&lt;!&ndash;        </p>&ndash;&gt;-->
-<!--&lt;!&ndash;        <p>&ndash;&gt;-->
-<!--&lt;!&ndash;            <label for="password">Password</label>&ndash;&gt;-->
-<!--&lt;!&ndash;            <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>&ndash;&gt;-->
-<!--&lt;!&ndash;        </p>&ndash;&gt;-->
-<!--&lt;!&ndash;        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>&ndash;&gt;-->
-<!--&lt;!&ndash;    </form>&ndash;&gt;-->
-<!--&lt;!&ndash;</div>&ndash;&gt;-->
-<!--&lt;!&ndash;</body>&ndash;&gt;-->
-<!--&lt;!&ndash;</html>&ndash;&gt;-->

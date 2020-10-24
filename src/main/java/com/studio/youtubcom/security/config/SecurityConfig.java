@@ -33,15 +33,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/resources/*", "/static/*", "/css/*", "/*.css", "/templates/*", "/blocks/*").permitAll()
+                .antMatchers("/resources/**", "/static/**", "/css/**", "/*.css", "/templates/**", "/blocks/**").permitAll()
                 .antMatchers("/", "/signUp").permitAll()
-                .antMatchers("/images/*", "/*.jpg", "/*.png").permitAll()
+                .antMatchers("/images/**", "/*.jpg", "/*.png").permitAll()
                 .anyRequest()
                 .authenticated()
                 .and()
                 .formLogin()
                 .loginPage("/login").permitAll()
-                .defaultSuccessUrl("/")
+                .defaultSuccessUrl("/success")
                 .and()
                 // logout
                 .logout()
