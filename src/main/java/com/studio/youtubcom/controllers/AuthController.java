@@ -1,8 +1,7 @@
 package com.studio.youtubcom.controllers;
 
-import com.studio.youtubcom.models.Role;
-import com.studio.youtubcom.models.User;
-import com.studio.youtubcom.repository.UserRepository;
+import com.studio.youtubcom.models.Post;
+import com.studio.youtubcom.repository.PostRepository;
 import com.studio.youtubcom.security.details.UserDetailsImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -20,6 +19,19 @@ import javax.servlet.http.HttpServletRequest;
 @Controller
 @RequestMapping
 public class AuthController {
+//    private final PostRepository postRepository;
+//
+//    public AuthController(PostRepository postRepository) {
+//        this.postRepository = postRepository;
+//    }
+//
+//    @GetMapping("/blog")
+//    public String blogMain(Model model) {
+//        Iterable<Post> posts = postRepository.findAll();
+//        model.addAttribute("title", "blog page");
+//        model.addAttribute("posts", posts);
+//        return "blogMain";
+//    }
 
     @GetMapping("/login")
     public String getLoginPage(Authentication authentication, ModelMap model, HttpServletRequest request) {
@@ -33,6 +45,7 @@ public class AuthController {
         return "login";
     }
 
+
     @PostMapping("/logout")
     public String postLogout(Model model) {
 //        model.addAttribute("title", true);
@@ -43,15 +56,17 @@ public class AuthController {
     public String getSuccessPage(Authentication authentication) {
         UserDetailsImpl details = (UserDetailsImpl) authentication.getPrincipal();
         String userRole = details.getAuthorities().toString();
-        System.out.println(userRole + details.getUsername() + details.getPassword() + " not enter");
-        if (userRole.equals("[USER]")||userRole.equals("USER")) {
-            System.out.println(userRole + details.getUsername() +details.getAuthorities()+ " is enter");
+        if (userRole.equals("[ADMIN]") || userRole.equals("ADMIN")) {
+            System.out.println(userRole + details.getUsername() + details.getAuthorities() + " is enter us ADMIN");
+            return "photoPage";
+        }
+        if (userRole.equals("[USER]") || userRole.equals("USER")) {
+            System.out.println(userRole + details.getUsername() + details.getAuthorities() + " is enter us USER");
             return "success";
         } else {
-            System.out.println(userRole + details.getUsername() +details.getAuthorities()+ " is enter");
-            return "photoPage";
+            System.out.println(userRole + details.getUsername() + details.getAuthorities() + " is not  enter");
+            return "redirect:/";
         }
 
     }
-
 }

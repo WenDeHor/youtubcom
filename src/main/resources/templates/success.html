@@ -41,7 +41,10 @@
     <div class="container">
         <h1>Registration and Login with Spring Boot, Spring Security,
             Thymeleaf, Hibernate and MySQL</h1>
-        Welcome <span sec:authentication="principal.username"> User</span>
+<!--        Welcome <span sec:authentication="principal.getUsername().toString()"> Username</span>-->
+<!--        Welcome <span sec:authentication="principal.getAuthorities().toString()"> Authorities</span>-->
+<!--        Welcome <span sec:authentication="principal.getPassword().toString()"> Password</span>-->
+<!--        Welcome <span sec:authentication="principal.isEnabled().toString()"> Enabled</span>-->
     </div>
 </div>
 <footer th:insert="blocks/footerFirst::footer"></footer>
