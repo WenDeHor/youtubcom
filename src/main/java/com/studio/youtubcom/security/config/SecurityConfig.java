@@ -58,7 +58,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 ////        web.ignoring().antMatchers("#carouselExampleIndicators");
 ////        web.ignoring().antMatchers("/#carouselExampleIndicators");
 ////        web.ignoring().antMatchers("/*.css");
-//        web.ignoring().antMatchers("/hederMine.html");
+//        web.ignoring().antMatchers("/heder-mine.html");
 //        web.ignoring().antMatchers("/photoSlider.html");
 //        web.ignoring().antMatchers("/*.css");
 //        web.ignoring().antMatchers("/*.jpg");

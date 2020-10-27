@@ -22,20 +22,27 @@
     <script type="text/javascript" src="blocks/js/script.js"></script>
 
 </head>
-<!--<header th:insert="blocks/heder::header"></header>-->
+
+
+<header th:insert="blocks/heder-mine::header-mine"></header>
+<br>
 <body>
-<div class="content mt-5">
-    <div th:each="el:${post}" class="alert alert-info mt-2">
-        <h1 th:text="${el.title}"/>
-        <p th:text="${el.anons}"/>
-        <p th:text="${el.full_text}"/>
-        <p><b>Перегляди:</b></p>
-        <p th:text="${el.video}"/>
-        <a th:href="'/blog/'+${el.id}+'/edit'" class="btn btn-warning">Редагувати</a>
-        <a th:href="'/blog/'+${el.id}+'/remove'" class="btn btn-warning">Видалити</a>
+<div class="content mt-5 mb-5">
+    <h3> Добавляємо статтю</h3>
+    <div class="mt-5" th:each="el:${post}">
+        <form method="post">
+            <input type="text" th:value="${el.title}" name="title" placeholder="Введіть назву статї"
+                   class="form-control"><br>
+            <input type="text" th:value="${el.video}" name="video" placeholder="Введіть відео" class="form-control"><br>
+            <input type="text" th:value="${el.anons}" name="anons" placeholder="Введіть анонс статї"
+                   class="form-control"><br>
+            <textarea name="full_text" placeholder="Введіть текст статї" class="form-control"
+                      th:text="${el.full_text}"/><br>
+            <button type="submit" class="btn btn-success">Обновити</button>
+        </form>
     </div>
 </div>
 
-<!--<div th:insert="blocks/footer::footer"></div>-->
+<footer th:insert="blocks/footer-first::footer-first"></footer>
 </body>
 </html>

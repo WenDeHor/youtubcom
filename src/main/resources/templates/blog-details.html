@@ -1,7 +1,5 @@
 <!DOCTYPE HTML>
-<!--<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html" lang="an">-->
-<html xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html" lang="an">
 <head>
     <title th:text="${title}"></title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -24,39 +22,21 @@
     <script type="text/javascript" src="blocks/js/script.js"></script>
 
 </head>
-
-<header th:insert="blocks/hederMine::header"></header>
-<br>
-
+<header th:insert="blocks/heder-mine::header-mine"></header><br>
+<!--<header th:insert="blocks/heder::header"></header>-->
 <body>
-<div class="form-style-2">
-    <div class="form-style-2-heading">
-        Зарегистрируйтесь!
+<div class="content mt-5">
+    <div th:each="el:${post}" class="alert alert-info mt-2">
+        <h1 th:text="${el.title}"/>
+        <p th:text="${el.anons}"/>
+        <p th:text="${el.full_text}"/>
+        <p th:text="${el.video}"/>
+        <a th:href="'/blog/'+${el.id}+'/edit'" class="btn btn-warning">Редагувати</a>
+        <a th:href="'/blog/'+${el.id}+'/remove'" class="btn btn-warning">Видалити</a>
+
     </div>
-    <form method="post" action="/signUp">
-        <label for="login">login
-            <input class="input-field" type="text" id="login" name="login">
-        </label>
-        <br>
-        <label for="password">password
-            <input class="input-field" type="password" id="password" name="password">
-        </label>
-        <br>
-        <label for="email">email
-            <input class="input-field" id="email" name="email">
-        </label>
-        <br>
-
-        <input type="submit" value="SignUp">
-        <!--        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>-->
-        <br>
-
-
-    </form>
 </div>
+
+<!--<div th:insert="blocks/footer::footer"></div>-->
 </body>
-<footer th:insert="blocks/footerFirst::footer"></footer>
 </html>
-
-
-

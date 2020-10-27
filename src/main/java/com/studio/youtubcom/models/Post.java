@@ -10,7 +10,7 @@ import javax.validation.constraints.Size;
 
 @Data
 //@AllArgsConstructor
-@NoArgsConstructor
+//@NoArgsConstructor
 @Builder
 @Entity
 @Table(name = "post")
@@ -33,9 +33,11 @@ public class Post {
     private String anons;
 
     @Column(name = "full_text")
-    @Size(min = 0, max = 1000)
+    @Size(min = 0, max = 10000)
     private String full_text;
 
+    public Post() {
+    }
 
     public Post(Long id, @Size(min = 0, max = 100) String title, @Size(min = 0, max = 200) String video, @Size(min = 0, max = 200) String anons, @Size(min = 0, max = 1000) String full_text) {
         this.id = id;

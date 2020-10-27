@@ -58,7 +58,7 @@ public class AuthController {
         String userRole = details.getAuthorities().toString();
         if (userRole.equals("[ADMIN]") || userRole.equals("ADMIN")) {
             System.out.println(userRole + details.getUsername() + details.getAuthorities() + " is enter us ADMIN");
-            return "photoPage";
+            return "blog-main";
         }
         if (userRole.equals("[USER]") || userRole.equals("USER")) {
             System.out.println(userRole + details.getUsername() + details.getAuthorities() + " is enter us USER");

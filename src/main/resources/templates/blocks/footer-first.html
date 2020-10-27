@@ -1,10 +1,12 @@
 <!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="an">
 <html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html" lang="an">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head>
-    <title th:text="${title}"></title>
+    <title>no</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-
     <!-- CSS only -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
           integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -19,30 +21,22 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
             integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
             crossorigin="anonymous"></script>
-    <script type="text/javascript" src="blocks/js/script.js"></script>
-
+    <!--    <script type="text/javascript" src="blocks/js/script.js"></script>-->
 </head>
-
-<header th:insert="blocks/hederMine::header"></header>
-<br>
-<body>
-<section class="jumbotron text-center" style="background-color: rgba(230,132,55,0.36)">
-    <div class="title mont">
-        <h1>Клієнтський журнал</h1>
-    </div>
-</section>
-
-<form action="/blog" method="get">
-    <div class="content mt-5">
-        <div th:each="el:${posts}" class="alert alert-info mt-2">
-            <h3 th:text="${el.title}"/>
-            <p th:text="${el.video}"/>
-            <p th:text="${el.anons}"/>
-            <a th:href="'/blog/'+${el.id}" class="btn btn-warning">Детальніше</a>
-        </div>
-    </div>
-</form>
-
-</body>
-<!--<div th:insert="blocks/footer::footer"></div>-->
-</html>
+<div th:fragment="footer-first">
+    <footer>
+        <section class="jumbotron " style="background-color: rgba(196,246,255,0.34)">
+            <p class="font-weight-bold text-uppercase text-center">Travel details and adventures</p>
+            <p class="text-center">
+            <h5>Підберемо мед, проконсультуємо, допоможемо, розкажемо. </h5><br>
+            <h4> Наш сервіс найкращий в регіоні.</h4><br>
+            <h3>Кожного дня ми прагнемо стати кращими. Якісний сервіс дозволяє працює
+                за рахунок великої кілкості професіоналів </h3>
+            <br><br>
+            <h6>
+                <p class=" font-weight-lighter text-right text-info">stories version*</p>
+            </h6>
+            <!--            font-weight-bold-->
+        </section>
+    </footer>
+</div>
