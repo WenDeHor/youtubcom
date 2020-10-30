@@ -19,19 +19,6 @@ import javax.servlet.http.HttpServletRequest;
 @Controller
 @RequestMapping
 public class AuthController {
-//    private final PostRepository postRepository;
-//
-//    public AuthController(PostRepository postRepository) {
-//        this.postRepository = postRepository;
-//    }
-//
-//    @GetMapping("/blog")
-//    public String blogMain(Model model) {
-//        Iterable<Post> posts = postRepository.findAll();
-//        model.addAttribute("title", "blog page");
-//        model.addAttribute("posts", posts);
-//        return "blogMain";
-//    }
 
     @GetMapping("/login")
     public String getLoginPage(Authentication authentication, ModelMap model, HttpServletRequest request) {

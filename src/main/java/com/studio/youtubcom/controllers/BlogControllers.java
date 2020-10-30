@@ -40,7 +40,10 @@ public class BlogControllers {
                               @RequestParam String anons,
                               @RequestParam String full_text,
                               Model model) {
-        Post post = new Post(id, title, video, anons, full_text);
+
+        String url= "https://www.youtube.com/embed/"+video+"?version=3&rel=1&fs=1&autohide=2&showsearch=0&showinfo=1&iv_load_policy=1&wmode=transparent";
+//        https://www.youtube.com/embed/vguSoDvurss?version=3&rel=1&fs=1&autohide=2&showsearch=0&showinfo=1&iv_load_policy=1&wmode=transparent
+        Post post = new Post(id, title, url, anons, full_text);
         postRepository.save(post);
         return "redirect:/blog";
     }
@@ -70,6 +73,16 @@ public class BlogControllers {
              return "blog-edit";
     }
 
+    @GetMapping("/blog/user/{id}")
+    public String blogUserDetails(@PathVariable(value = "id") Long id, Model model) {
+        Optional<Post> post = postRepository.findById(id);
+        List<Post> userpost = new ArrayList<>();
+        post.ifPresent(userpost::add);
+        model.addAttribute("title", "user page");
+        model.addAttribute("post", userpost);
+        return "blogUserDetails";
+    }
+
     @PostMapping("/blog/{id}/edit")
     public String blogPostUpdate(@PathVariable(value = "id") Long id,
                                  @RequestParam String title,
@@ -79,6 +92,8 @@ public class BlogControllers {
                                  Model model) {
         Post post = postRepository.findById(id).orElseThrow(null);
         post.setTitle(title);
+//        String url= "https://www.youtube.com/embed/"+video+"?version=3&rel=1&fs=1&autohide=2&showsearch=0&showinfo=1&iv_load_policy=1&wmode=transparent";
+//        https://www.youtube.com/embed/vguSoDvurss?version=3&rel=1&fs=1&autohide=2&showsearch=0&showinfo=1&iv_load_policy=1&wmode=transparent
         post.setVideo(video);
         post.setAnons(anons);
         post.setFull_text(full_text);

@@ -11,45 +11,34 @@
 <!--<script src="js/script.js"></script>-->
 
 <div th:fragment="slider">
-
-
-        <div class="row">
-            <div class="album col-md-12 bg-light" style="background-color: bisque">
-                <div class="nav justify-content-center">
-
-                    <div class="row col-md-12 mb-12">
-
-                        <div class="col-md-4 mb-4">
+    <div class="row">
+        <div class="album col-md-12 bg-light" style="background-color: bisque">
+            <div class="nav justify-content-center">
+                <div class="row col-md-12 mb-12">
+                    <div th:each="el:${posts}" class="col-md-4 mb-4">
+                        <h3 th:text="${el.title}"/>
+                        <form>
                             <div class="embed-responsive embed-responsive-16by9">
                                 <iframe class="embed-responsive-item"
-                                        src="https://www.youtube.com/embed/YkHCWkQo0XM?version=3&rel=1&fs=1&autohide=2&showsearch=0&showinfo=1&iv_load_policy=1&wmode=transparent"
-                                        allowfullscreen></iframe>
+                                        th:src="${el.video}"></iframe>
                             </div>
-                        </div>
-                        <div class="col-md-4 mb-4">
-                            <div class="embed-responsive embed-responsive-16by9">
-                                <iframe class="embed-responsive-item"
-                                        src="https://www.youtube.com/embed/YkHCWkQo0XM?version=3&rel=1&fs=1&autohide=2&showsearch=0&showinfo=1&iv_load_policy=1&wmode=transparent"
-                                        allowfullscreen></iframe>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-4">
-                            <div class="embed-responsive embed-responsive-16by9">
-                                <iframe class="embed-responsive-item"
-                                        src="https://www.youtube.com/embed/YkHCWkQo0XM?version=3&rel=1&fs=1&autohide=2&showsearch=0&showinfo=1&iv_load_policy=1&wmode=transparent"
-                                        allowfullscreen></iframe>
-                            </div>
-                        </div>
+                            <a th:href="'/blog/user/'+${el.id}" class="btn btn-warning">Детальніше</a>
+
+                        </form>
+                        <p th:text="${el.anons}"/>
                     </div>
-                </div>
+                    <!--                        <div class="col-md-4 mb-4">-->
+                    <!--                            <div class="embed-responsive embed-responsive-16by9">-->
+                    <!--                                <iframe class="embed-responsive-item"-->
+                    <!--                                        src="https://www.youtube.com/embed/YkHCWkQo0XM?version=3&rel=1&fs=1&autohide=2&showsearch=0&showinfo=1&iv_load_policy=1&wmode=transparent"-->
+                    <!--                                        allowfullscreen></iframe>-->
+                    <!--                            </div>-->
+                    <!--                        </div>-->
 
+                </div>
             </div>
         </div>
-
-
     </div>
-
-
-
+</div>
 </html>
 

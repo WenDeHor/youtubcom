@@ -33,9 +33,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable()
                 .authorizeRequests()
-//                .antMatchers("/blog").hasRole("ADMIN")
+//                .antMatchers("/blog/**").hasRole("ADMIN")
                 .antMatchers("/resources/**", "/static/**", "/css/**", "/*.css", "/templates/**", "/blocks/**").permitAll()
-                .antMatchers("/", "/signUp").permitAll()
+                .antMatchers("/", "/signUp", "/pagePrice", "/blog/user/{id}").permitAll()
                 .antMatchers("/images/**", "/*.jpg", "/*.png").permitAll()
                 .anyRequest()
                 .authenticated()
@@ -46,7 +46,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 // logout
                 .logout()
-                .logoutRequestMatcher(new AntPathRequestMatcher("/logout","POST"))
+                .logoutRequestMatcher(new AntPathRequestMatcher("/logout", "POST"))
                 .invalidateHttpSession(true)
                 .clearAuthentication(true)
                 .deleteCookies("JSESSIONID")
