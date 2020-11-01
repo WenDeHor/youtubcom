@@ -3,7 +3,8 @@
 <head>
     <title th:text="${title}"></title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <!--   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">-->
+    <!--    CSS-->
+    <link rel="stylesheet" href="css/mine.css">
 
     <!-- CSS only -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
@@ -22,15 +23,21 @@
     <script type="text/javascript" src="blocks/js/script.js"></script>
 
 </head>
-<header th:insert="blocks/heder-mine::header-mine"></header><br>
-<header th:insert="blocks/photoSlider::slider"></header><br>
+<header th:insert="blocks/heder-mine::header-mine"></header>
+<br>
+<header th:insert="blocks/photoSlider::slider"></header>
+<br>
 <section class="jumbotron " style="background-color: rgba(196,246,255,0.34)">
     <h2>
-        <p class="font-weight-bold text-uppercase text-center">Travel details and adventures</p>
+<!--        <p class="font-weight-bold alert-primary text-uppercase text-center">Замовляйте мед на сторінці особистого кабінету або-->
+<!--        звертайтеся і ми проконсультуємо</p>-->
+        <p class="text-center">Замовляйте мед на сторінці особистого кабінету або
+            звертайтеся і ми проконсультуємо</p>
     </h2>
-
+<!--    class="alert alert-primary" role="alert"-->
     <h4>
-        <p class="text-center">The first steps on unknown paths. Be the first. Feel the breath of our world. Open the door to the world. Go on a journey. </p>
+        <p class="text-center">Чудові умови та висока якість. Зверність і ми проконсультуємо, запропонуємо або
+            зарезврвуємо товар. </p>
     </h4>
 </section>
 
@@ -39,23 +46,57 @@
         <div class="nav justify-content-center">
 
             <div class="row col-md-12">
-
+                <!--                <img src="..." alt="..." class="rounded-circle">-->
                 <div class="col-md-4">
-                    <img src="images/рh23.jpg" class="img-circle" alt="name" width="100%" height="100%">
+                    <img src="images/bee_1.jpg" class="img-thumbnail" alt="100" width="100%" height="100">
+                </div>
+                <div class="col-md-8">
+                    <h2>Гречаний мед</h2>
+                    <h5 >Сьогодні у продажу є найрізноманітніші види меду. Найкориснішим з них є гречаний – той, який
+                        зібраний з квіток гречки. Головна особливість цього виду меду полягає в чистоті продукту,
+                        тому його ще називають монофлерним. Терпкий смак, коричневий відтінок і нудотна солодкість –
+                        це відмітні ознаки гречаного меду. Його корисні властивості і протипоказання відомі далеко не
+                        усім.
+                        Цей сорт меду перевершує багато в чому інші види. В першу чергу, слід зазначити хімічний склад
+                        родукту на виході. Гречаний мед має високий вміст заліза, що пояснює його коричневий і
+                        темно-червоний відтінок. Також мед збагачений корисними мікроелементами, але найбільше:
+                        кальцієм, калієм, фосфором, магнієм, міддю.</h5>
                 </div>
                 <div class="col-md-4">
-                    <img src="images/рh24.jpg" class="img-circle" alt="name" width="100%" height="100%">
+                    <img src="images/bee_2.jpeg" class="img-thumbnail" alt="100" width="100%" height="100">
+                </div>
+                <div class="col-md-8">
+                    <h2>Липовий мед</h2>
+                    <h5>Зрілий та насичений мед світло-бурштинового кольору. Цей мед має чудовий аромат квіток липи та
+                        густий насичений смак з ледь відчутною ноткою терпкості. Це класичний липовий мед, смак якого
+                        відомий з дитинства. Натуральний липовий мед швидко кристалізується, що є критерієм оцінки його
+                        чистоти.
+                        Крім хорошого смаку та аромату цей продукт має ще ряд цілющих ефектів і саме липовий мед має
+                        потужний лікувальний ефект у випадку з простудними і іншими запальними захворюваннями. Це
+                        пояснюється підвищеним вмістом у складі продукту корисних ферментів, а також вітамінів В, К, Е,
+                        які надають антибактеріальний, протизапальний, жарознижуючий ефект, а також підвищують імунітет. </h5>
                 </div>
                 <div class="col-md-4">
-                    <img src="images/рh25.jpg" class="img-circle" alt="name" width="100%" height="100%">
+                    <img src="images/bee_3.jpg" class="img-thumbnail" alt="100" width="100%" height="100">
                 </div>
-
+                <div class="col-md-8">
+                    <h2>Мед різнотрав’я</h2>
+                    <h5>Мед з різнотрав’я це прекрасний загально зміцнювальний засіб, проте головною його особливістю є
+                        здатність стимулювати мозкову діяльність та швидко відновити організм після нервового напруження.
+                        Також цей вид меду має яскраво виражену бактерицидну дію, а отже може застосовуватися для лікування
+                        різних шкірних захворювань.
+                        Колір меду варіюється від світло-янтарного до світло-коричневого (в залежності від видів трав, а
+                        відповідно і нектару лугових квітів). Цей мед має кремоподібну структуру і має тонкий квітковий аромат.
+                        Квітковий мед має дуже малий термін кристалізації, і вже через три тижні після збору він перетворюється
+                        на густу дрібнозернисту масу.</h5>
+                </div>
             </div>
         </div>
 
     </div>
 
-</div> <br>
+</div>
+<br>
 
 <!--<img alt="Office L icon" src="META-INF/107716478_1591761084319018_6747217224295558277_n.jpg" style="height: 64px; width: 64px;">-->
 <header th:insert="blocks/videoSlider::slider"></header>

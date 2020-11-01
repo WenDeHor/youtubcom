@@ -29,30 +29,45 @@
 <br>
 
 <body>
-<div class="form-style-2">
-    <div class="form-style-2-heading">
-        Зарегистрируйтесь!
-    </div>
-    <form method="post" action="/signUp">
-        <label for="login">login
-            <input class="input-field" type="text" id="login" name="login">
-        </label>
-        <br>
-        <label for="password">password
-            <input class="input-field" type="password" id="password" name="password">
-        </label>
-        <br>
-        <label for="email">email
-            <input class="input-field" id="email" name="email">
-        </label>
-        <br>
+<div class="container">
 
-        <input type="submit" value="SignUp">
-        <!--        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>-->
-        <br>
+    <form class="form-signin" method="post" action="/signUp">
+        <h2 class="form-signin-heading">Сторінка створення особистого кабінету</h2>
 
+        <p>
+            <label for="login">Ім'я та прізвище або псевдонім</label>
+            <input type="text" id="login" name="login" class="form-control"
+                   placeholder="Введіть ім'я та прізвище або псевдонім" required>
+        </p>
+        <p>
+            <label for="email">Електронна пошта</label>
+            <input type="text" id="email" name="email" class="form-control" placeholder="Введіть свою електронну пошту"
+                   required>
+        </p>
+        <p>
+            <label for="password">Секретний код</label>
+            <input type="password" id="password" name="password" class="form-control"
+                   placeholder="Введіть секретний код" required>
+        </p>
 
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Увійти в особистий кабінет</button>
     </form>
+    <!--        <label for="login">login-->
+    <!--            <input class="input-field" type="text" id="login" name="login">-->
+    <!--        </label>-->
+
+    <!--        <label for="password">password-->
+    <!--            <input class="input-field" type="password" id="password" name="password">-->
+    <!--        </label>-->
+    <!--       -->
+    <!--        <label for="email">email-->
+    <!--            <input class="input-field" id="email" name="email">-->
+    <!--        </label>-->
+
+
+    <!--        <input type="submit" value="SignUp">-->
+    <!--        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>-->
+    <br>
 </div>
 </body>
 <footer th:insert="blocks/footer-first::footer-first"></footer>

@@ -6,7 +6,8 @@
     <title th:text="${title}"></title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <!--   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">-->
-
+    <!--    CSS-->
+    <link rel="stylesheet" href="css/mine.css">
     <!-- CSS only -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
           integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -33,30 +34,28 @@
     <form class="form-signin" method="post" action="/login">
         <!-- error message -->
         <div th:if="${param.error}">
-            <div class="alert alert-danger">Invalid username or
-                password.
+            <div class="alert alert-danger">Помилковий електронроний адрес або секретний код
             </div>
         </div>
         <!-- logout message -->
         <div th:if="${param.logout}">
-            <div class="alert alert-info">You have been logged out.</div>
+            <div class="alert alert-info">Усіпшно вийшли з особистого кабінету.</div>
         </div>
 
         <h2 class="form-signin-heading">Login</h2>
         <p>
-            <label for="username">Username</label>
-            <input type="text" id="username" name="username" class="form-control" placeholder="Username" required>
+            <label for="username">Електронна пошта</label>
+            <input type="text" id="username" name="username" class="form-control" placeholder="Введіть свою електронну пошту" required>
         </p>
         <p>
             <label for="password">Password</label>
-            <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+            <input type="password" id="password" name="password" class="form-control" placeholder="Введіть секретний код" required>
         </p>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Увійти в особистий кабінет</button>
     </form>
 
     <div class="form-group">
-						<span>New user? <a href="/signUp">Register
-								here</a></span>
+						<span>New user? <a href="/signUp">Зареєструватись</a></span>
     </div>
 </div>
 </body>

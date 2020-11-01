@@ -16,16 +16,16 @@
             <div class="nav justify-content-center">
                 <div class="row col-md-12 mb-12">
                     <div th:each="el:${posts}" class="col-md-4 mb-4">
-                        <h3 th:text="${el.title}"/>
                         <form>
                             <div class="embed-responsive embed-responsive-16by9">
                                 <iframe class="embed-responsive-item"
                                         th:src="${el.video}"></iframe>
                             </div>
-                            <a th:href="'/blog/user/'+${el.id}" class="btn btn-warning">Детальніше</a>
 
                         </form>
-                        <p th:text="${el.anons}"/>
+                        <h3 th:text="${el.title}"/>
+                        <h4 th:text="${el.anons}"/>
+                        <a th:href="'/blog/user/'+${el.id}" class="btn btn-outline-warning btn-sm">Детальніше</a>
                     </div>
                     <!--                        <div class="col-md-4 mb-4">-->
                     <!--                            <div class="embed-responsive embed-responsive-16by9">-->
