@@ -24,7 +24,7 @@ public class AuthController {
     public String getLoginPage(Authentication authentication, ModelMap model, HttpServletRequest request) {
 
         if (authentication != null) {
-            return "redirect:/";
+            return "redirect:/success";
         } else if (request.getParameterMap().containsKey("error")) {
             model.addAttribute("error", true);
         }

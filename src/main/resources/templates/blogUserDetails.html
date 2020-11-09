@@ -23,8 +23,8 @@
     <script type="text/javascript" src="blocks/js/script.js"></script>
 
 </head>
-<header th:insert="blocks/heder-mine::header-mine"></header><br>
-<br>
+<header th:insert="blocks/heder-mine::header-mine"></header><br><br>
+
 <body>
 <div class="row col-md-12 mb-12">
     <div th:each="el:${post}" class="col-md-12 mb-12">
@@ -38,6 +38,7 @@
         <h3><p th:text="${el.full_text}"/></h3>
     </div>
 </div>
-<footer th:insert="blocks/footer-first::footer-first"></footer>
+
 </body>
+<footer th:insert="blocks/footer-first::footer-first"></footer>
 </html>
