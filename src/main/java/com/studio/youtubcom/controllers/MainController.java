@@ -2,7 +2,6 @@ package com.studio.youtubcom.controllers;
 
 import com.studio.youtubcom.models.Post;
 import com.studio.youtubcom.repository.PostRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,16 +22,6 @@ public class MainController {
         return "home";
     }
 
-
-    //    @GetMapping("/about")
-//    public String about(Model model) {
-//        model.addAttribute("title", "Сторінка про нас");
-//        return "about";
-//    }
-//    @GetMapping("/about")
-//    public String about() {
-//        return "/about";
-//    }
     @GetMapping("/news")
     public String news() {
         return "news";

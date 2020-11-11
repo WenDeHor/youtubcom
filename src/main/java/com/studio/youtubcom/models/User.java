@@ -6,9 +6,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.Date;
-import java.util.List;
-import java.util.Objects;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -38,8 +35,4 @@ public class User {
     @Column(name = "state")
     private State state;
 
-//    @OneToMany(fetch = FetchType.EAGER, mappedBy = "user")
-////    @OrderBy("dateTime DESC")
-////    @JsonIgnore
-//    protected List<Order> orders;
 }

@@ -45,8 +45,4 @@ public class PingManager {
 
     }
 
-    private void timeChek() {
-
-    }
-
 }

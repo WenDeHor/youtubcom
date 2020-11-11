@@ -35,17 +35,4 @@ public class SignUpServiceImpl implements SignUpService {
                 .build();
         usersRepository.save(user);
     }
-//    @Override
-//    public void signUp(User newuser) {
-//        String hashPassword = passwordEncoder.encode(newuser.getPassword());
-//
-//        User user = User.builder()
-//                .password(hashPassword)
-//                .login(newuser.getLogin())
-//                .email(newuser.getEmail())
-//                .role(Role.USER)
-//                .state(State.ACTIVE)
-//                .build();
-//        usersRepository.save(user);
-//    }
 }

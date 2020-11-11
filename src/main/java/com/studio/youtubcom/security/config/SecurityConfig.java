@@ -8,7 +8,6 @@ import org.springframework.security.authentication.dao.DaoAuthenticationProvider
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -52,40 +51,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .deleteCookies("JSESSIONID")
                 .logoutSuccessUrl("/");
     }
-
-//    @Override
-//    public void configure(WebSecurity web) throws Exception {
-////        web.ignoring().antMatchers("#carouselExampleIndicators");
-////        web.ignoring().antMatchers("/#carouselExampleIndicators");
-////        web.ignoring().antMatchers("/*.css");
-//        web.ignoring().antMatchers("/heder-mine.html");
-//        web.ignoring().antMatchers("/photoSlider.html");
-//        web.ignoring().antMatchers("/*.css");
-//        web.ignoring().antMatchers("/*.jpg");
-//        web.ignoring().antMatchers("/*.png");
-//    }
-//    @Override
-//    protected void configure(HttpSecurity http) throws Exception {
-//        http
-//                .authorizeRequests()
-//                .antMatchers("/users/**").hasAuthority("ADMIN")
-//                .antMatchers("/signUp/**").permitAll()
-//                .antMatchers("/").authenticated()
-//                .antMatchers("/css/**").permitAll()
-//                .anyRequest().authenticated()
-//                .and()
-//                .formLogin()
-//                .usernameParameter("login")
-//                .defaultSuccessUrl("/")
-//                .loginPage("/login")
-//                .permitAll()
-//                .and()
-//                .rememberMe()
-//                .rememberMeParameter("remember-me")
-//                .tokenRepository(tokenRepository());
-//        http.csrf().disable();
-//    }
-
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.authenticationProvider(daoAuthenticationProvider());

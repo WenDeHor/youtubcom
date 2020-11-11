@@ -11,7 +11,6 @@ import java.util.List;
 import java.util.Optional;
 
 @Controller
-//@RequestMapping
 public class BlogControllers {
     private final PostRepository postRepository;
 
@@ -63,9 +62,6 @@ public class BlogControllers {
 
     @GetMapping("/blog/{id}/edit")
     public String blogEdit(@PathVariable(value = "id") Long id, Model model) {
-//        if (!postRepository.existsById(id)) {
-//            return "redirect:/blog";
-//        }
             Optional<Post> post = postRepository.findById(id);
              List<Post> res = new ArrayList<>();
                post.ifPresent(res::add);
@@ -107,11 +103,4 @@ public class BlogControllers {
         postRepository.delete(post);
         return "redirect:/blog";
     }
-
-//    @PostMapping("/blog/{id}/remove")
-//    public String blogPostUpdate(@PathVariable(value = "id") Long id, Model model) {
-//        Post post = postRepository.findById(id).orElseThrow(null);
-//        postRepository.delete(post);
-//        return "redirect:/blog";
-//    }
 }

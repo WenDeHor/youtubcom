@@ -1,15 +1,10 @@
 package com.studio.youtubcom.controllers;
 
 import com.studio.youtubcom.models.Order;
-import com.studio.youtubcom.models.Post;
 import com.studio.youtubcom.models.User;
 import com.studio.youtubcom.repository.OrderRepository;
-import com.studio.youtubcom.repository.PostRepository;
 import com.studio.youtubcom.repository.UserRepository;
 import com.studio.youtubcom.security.details.UserDetailsImpl;
-import com.sun.xml.bind.v2.TODO;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Sort;
 import org.springframework.security.core.Authentication;
 
 import org.springframework.stereotype.Controller;
@@ -59,7 +54,6 @@ public class AuthController {
 
     @PostMapping("/logout")
     public String postLogout(Model model) {
-//        model.addAttribute("title", true);
         return "redirect:/";
     }
 
@@ -80,29 +74,12 @@ public class AuthController {
         }
         if (userRole.equals("[USER]") || userRole.equals("USER")) {
 
-//            Optional<User> user = repository.findOneByEmail(authentication.getName());
-//            System.out.println(user.toString());
-//            List<Order> all = orderRepository.findAll();
-//            System.out.println(all.toString());
-
 //            TODO good Work
 //            Optional<User> users = repository.findOneByEmail(authentication.getName());
 //            List<User> listUser = new ArrayList<>();
 //            users.ifPresent(listUser::add);
 //            model.addAttribute("listUser", listUser);
 
-//            Optional<User> userauth = repository.findOneByEmail(authentication.getName());
-//
-//            model.addAttribute("orders", orders);
-//            System.out.println(orders.toString());
-
-
-//            List<Order> orders = orderRepository.findAll();
-//            model.addAttribute("orders", orders);
-
-//           Optional<User> listUser = repository.findOneByEmail(authentication.getName());
-//            model.addAttribute("listUser", listUser);
-//            System.out.println(listUser.toString());
             System.out.println(userRole + details.getUsername() + details.getAuthorities() + " is enter us USER");
             return "success";
         } else {

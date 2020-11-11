@@ -1,8 +1,6 @@
 <!DOCTYPE HTML>
 
 <html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html" lang="an">
-<!--<html xmlns:th="http://www.thymeleaf.org"-->
-<!--      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">-->
 <head>
     <title>no</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -23,18 +21,14 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
             integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
             crossorigin="anonymous"></script>
-    <!--    <script type="text/javascript" src="blocks/js/script.js"></script>-->
+
 </head>
 
-<!--<style type="text" th:src="static/style.css"></style>-->
-<!--<style type="script" th:src="templates/bools/js/script.js"></style>-->
 
 <div th:fragment="header-mine">
 
     <nav class="navbar navbar-expand-lg navbar-light " style="background-color: rgba(196,246,255,0.34)">
-
-        <!--                logo-->
-        <a href="/" class="site-logo-link left-container" rel="home" itemprop="url"><img src="images/LOGO2.jpg"
+            <a href="/" class="site-logo-link left-container" rel="home" itemprop="url"><img src="images/LOGO2.jpg"
                                                                                          height="40"
                                                                                          alt=""> </a>
         <div class="container-fluid">
@@ -45,50 +39,16 @@
                         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item"><a class="nav-link" href="/pagePrice"><h5>Прайс-лист</h5></a></li>
                         <li class="nav-item"><a class="nav-link" href="/news"><h5>Цікава інформація</h5></a></li>
                         <!--                        <li class="nav-item"><a class="nav-link" href="#">Статті</a>-->
                         </li>
-
-                        <!--                        <li class="nav-item dropdown">-->
-                        <!--                            <a class="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button"-->
-                        <!--                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
-                        <!--                                CATEGORIES-->
-                        <!--                            </a>-->
-                        <!--                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
-
-                        <!--                                <a class="dropdown-item" href="/photoPage">GALLERY PHOTO</a>-->
-                        <!--                                <a class="dropdown-item" href="#">HOTELS AND HOSTELS</a>-->
-                        <!--                                <a class="dropdown-item" href="#">TOURIST ROUTES</a>-->
-                        <!--                                <div class="dropdown-divider"></div>-->
-                        <!--                                <a class="dropdown-item" href="https://www.lyrarc.com">WORLD NEWS</a>-->
-                        <!--                                <a class="dropdown-item"-->
-                        <!--                                   href="https://www.metservice.com/national?gclid=CjwKCAjwps75BRAcEiwAEiACMaqatm4uZcJI6-SY9mcQY_QsaMd7oBuhlcgrMvizDqOjYut5wCOk6xoCsjQQAvD_BwE">WEATHER</a>-->
-                        <!--                            </div>-->
-                        <!--                        </li>-->
-
                     </ul>
-
-                    <!--                Search-->
-                    <!--                    <form class="form-inline form-navbar my-2 my-lg-0 order-2" action="/">-->
-                    <!--                        <label>-->
-                    <!--                            <input class="form-control" name="s" type="text" placeholder="Search">-->
-                    <!--                        </label>-->
-                    <!--                    </form>-->
-
                     <ul class="navbar-nav d-none d-lg-flex ml-2 order-3">
-                        <!--                        <li class="nav-item" sec:authorize="isAuthenticated()">-->
-                        <!--                            <form action="/logout" method="POST">-->
-                        <!--                                <button type="submit">Logout</button>-->
-                        <!--                            </form>-->
-                        <!--                            <a class="nav-link" href="/logout">Logout</a></li>-->
-
                         <li class="nav-item"><a class="nav-link" href="/login"><h5>Кабінет</h5></a></li>
                         <li class="nav-item"><a class="nav-link" href="/signUp"><h5>Реєстрація</h5></a></li>
-
                     </ul>
                     <ul class="navbar-nav d-lg-none">
                         <li class="nav-item-divider"></li>
@@ -97,10 +57,6 @@
                         <li class="nav-item"><a class="nav-link" href="/signUp"><h5>Реєстрація</h5></a></li>
 
                     </ul>
-                    <!--                    <form class="form-inline my-2 my-lg-0">-->
-                    <!--                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">-->
-                    <!--                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
-                    <!--                    </form>-->
                 </div>
             </div>
         </div>

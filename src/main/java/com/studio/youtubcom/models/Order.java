@@ -4,11 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
-
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import java.util.Date;
 @Data
 @AllArgsConstructor
@@ -37,9 +33,4 @@ public class Order {
     @Column(name = "bonus")
     private String bonus;
 
-//    @ManyToOne(fetch = FetchType.EAGER)
-//    @JoinColumn(name = "id_user")//, nullable = false)
-//    @OnDelete(action = OnDeleteAction.CASCADE)
-//    @NotNull
-//    private User user;
 }

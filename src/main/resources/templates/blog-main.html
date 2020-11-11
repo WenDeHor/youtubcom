@@ -3,7 +3,6 @@
 <head>
     <title th:text="${title}"></title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">-->
     <!--    CSS-->
     <link rel="stylesheet" href="css/mine.css">
     <!-- CSS only -->
@@ -42,9 +41,6 @@
     <div th:each="el:${listUser}" class="alert alert-info mt-2">
         <h3 th:text="${el.login}"/>
         <p th:text="${el.email}"/>
-        <!--            <a th:href="'/blog/'+${el.userId}+'/edit'" class="btn btn-warning">Редагувати</a>-->
-        <!--            <a th:href="'/blog/'+${el.userId}+'/remove'" class="btn btn-warning">Видалити</a>-->
-
     </div>
 </div>
 <h3> Перелік замовлень</h3>
@@ -73,5 +69,4 @@
 
 </body>
 <footer th:insert="blocks/footer-first::footer-first"></footer>
-<!--<div th:insert="blocks/footer::footer"></div>-->
 </html>
