@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html" lang="an">
+<head>
+    <title th:text="${title}"></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <!--   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">-->
+    <!--    CSS-->
+    <link rel="stylesheet" href="css/mine.css">
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+            integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+            crossorigin="anonymous"></script>
+    <script type="text/javascript" src="blocks/js/script.js"></script>
+
+</head>
+<header th:insert="blocks/heder-mine::header-mine"></header>
+<br>
+
+
+<main role="main">
+
+    <section class="jumbotron text-center" style="background-color: rgba(0, 138, 242, 0.1)">
+        <div class="title mont">
+            <h2>Прайс-лист. Сервіси та пропозиції</h2>
+        </div>
+    </section>
+
+    <div class="row">
+        <div class="album col-md-12 bg-light" style="background-color: bisque">
+            <div class="nav justify-content-center">
+                <div class="row col-md-12 mb-12">
+
+                    <div class="rounded mx-auto d-block ">
+                        <div>
+                            <img alt="med" width="100%"
+                                 src="images/price.jpg"
+                                 class="img-fluid ">
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+                        </p>
+                        <h2> Прополіс </h2>
+                        <h3> Ціна одного грама - 1грн </h3> <br>
+                        <h2>Пилок</h2>
+                        <h3> При замовлені до 10 кг - 110 грн/кг. <br>
+                            При замовлені від 10 кг - 90 грн/кг</h3> <br>
+                        <h2> Мед </h2>
+                        <h3> Липовий мед 2020-го року 160 грн. </h3>
+                        <h3> !!! При замовлені від 1000 грн - доставка безкоштовна
+                            Відправлення здійснюється Новою Поштою та Укр-поштою, по всій території України. Оплата
+                            при отриманні.
+
+                            <a href="/botMessage">Замовити дзвінок</a>
+
+                        <br>
+                        <br>
+                        <br>
+                        <h3><code>Над пропозиціями та акціями працюємо кожного дня.<br>
+                            Для кожно постійно покупця створено внутріній рейтинг.<br>
+                            Замовляйте, корситуйтесь та отримуйте персональні пропозиції та опції. </code>
+                        </h3>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+<footer th:insert="blocks/footer-first::footer-first"></footer>
+</html>

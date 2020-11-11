@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<!--<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html" lang="an">-->
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title th:text="${title}"></title>
+    <title th:text="${user}"></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <!--   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">-->
+    <!--    CSS-->
+    <link rel="stylesheet" href="css/mine.css">
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+            integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+            crossorigin="anonymous"></script>
+    <script type="text/javascript" src="blocks/js/script.js"></script>
+
+</head>
+
+<header th:insert="blocks/heder-mine::header-mine"></header>
+<br>
+
+<div class="container">
+
+    <form action="/logout" method="POST">
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Покинути особистий кабінет</button>
+    </form>
+    <h2>Сторінка замовлень</h2>
+    <form class="form-signin" method="post" action="/orderuser">
+
+        <p>
+            <label for="username">Вкажіть ім'я отримувача</label>
+            <input type="text" id="username" name="username" class="form-control"
+                   placeholder="Імя отримувача" required>
+        </p>
+        <p>
+            <label for="phone">Вкажіть телефон отримувача</label>
+            <input type="text" id="phone" name="phone" class="form-control" placeholder="Телефон отримувача"
+                   required>
+        </p>
+        <p>
+            <label for="text">Що Вам підібрати та надіслати та на яку адресу </label>
+            <input type="text" id="text" name="text" class="form-control" placeholder="Вкажіть замовлення"
+                   required>
+        </p>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Зробити замовлення</button>
+        <br>
+        <br>
+
+        <h5> При замовлені пилку до 10 кг - 110 грн/кг. При замовлені пилку від 10 кг - 90 грн/кг</h5>
+        <h5> При замовлені від 1000 грн - доставка безкоштовна
+            Відправлення здійснюється Новою Поштою та Укр-поштою, по всій території України. Оплата
+            при отриманні</h5>
+
+    </form>
+
+
+</div>
+<footer th:insert="blocks/footer-first::footer-first"></footer>
+</html>

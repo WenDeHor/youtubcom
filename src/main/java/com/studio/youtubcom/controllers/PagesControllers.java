@@ -8,12 +8,12 @@ public class PagesControllers {
     @GetMapping("/honeyPage")
     public String honeyPage(Model model) {
         model.addAttribute("title", "Honey Page");
-        return "honeyPage";
+        return "honey-page";
     }
     @GetMapping("/pollenPage")
     public String pollenPage(Model model) {
         model.addAttribute("title", "Pollen Page");
-        return "pollenPage";
+        return "pollen-page";
     }
 
     @GetMapping("/propolisPage")
@@ -25,7 +25,7 @@ public class PagesControllers {
     @GetMapping("/pricePage")
     public String   pricePage(Model model) {
         model.addAttribute("title", "Price Page");
-        return "pricePage";
+        return "price-page";
     }
 
 }

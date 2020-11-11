@@ -1,0 +1,33 @@
+/*https://fonts.google.com/?subset=cyrillic&sidebar.open=true&selection.family=Noto+Serif|Rubik:wght@500*/
+
+/*@import url('https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap');*/
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif&family=Rubik:wght@500&display=swap');
+
+
+/*h1{font-family: 'Noto Serif', serif;}*/
+/*h2{font-family: 'Noto Serif', serif;}*/
+/*h3{font-family: 'Noto Serif', serif;}*/
+/*h4{font-family: 'Noto Serif', serif;}*/
+/*h5{font-family: 'Noto Serif', serif;}*/
+h1 {
+    font-family: 'Rubik', sans-serif;
+}
+
+h2 {
+    font-family: 'Rubik', sans-serif;
+}
+
+h3 {
+    font-family: 'Rubik', sans-serif;
+}
+
+h4 {
+    font-family: 'Rubik', sans-serif;
+}
+
+h5 {
+    font-family: 'Rubik', sans-serif;
+}
+h6 {
+    font-family: 'Rubik', sans-serif;
+}
