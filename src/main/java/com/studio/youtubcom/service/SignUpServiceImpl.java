@@ -8,6 +8,8 @@ import com.studio.youtubcom.repository.UserRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 
 @Service
 public class SignUpServiceImpl implements SignUpService {
@@ -25,14 +27,27 @@ public class SignUpServiceImpl implements SignUpService {
     @Override
     public void signUp(UserForm userForm) {
         String hashPassword = passwordEncoder.encode(userForm.getPassword());
+        User userByRole = usersRepository.findUserByRole(Role.ADMIN);
+        if(userByRole == null){
+            User user = User.builder()
+                    .password(hashPassword)
+                    .login(userForm.getLogin())
+                    .email(userForm.getEmail())
+                    .role(Role.ADMIN)
+                    .state(State.ACTIVE)
+                    .build();
+            usersRepository.save(user);
+        } else {
+            User user = User.builder()
+                    .password(hashPassword)
+                    .login(userForm.getLogin())
+                    .email(userForm.getEmail())
+                    .role(Role.USER)
+                    .state(State.ACTIVE)
+                    .build();
+            usersRepository.save(user);
+        }
 
-        User user = User.builder()
-                .password(hashPassword)
-                .login(userForm.getLogin())
-                .email(userForm.getEmail())
-                .role(Role.USER)
-                .state(State.ACTIVE)
-                .build();
-        usersRepository.save(user);
+
     }
 }
