@@ -1,5 +1,6 @@
 package com.studio.youtubcom.security.details;
 
+import com.studio.youtubcom.models.Order;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -8,6 +9,7 @@ import com.studio.youtubcom.models.User;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 
 
 public class UserDetailsImpl implements UserDetails {
@@ -55,7 +57,7 @@ public class UserDetailsImpl implements UserDetails {
         return user.getState().equals(State.ACTIVE);
     }
 
-    public User getUser() {
+    public User getUser(List<Order> all) {
         return user;
     }
 }

@@ -1,9 +1,15 @@
 package com.studio.youtubcom.controllers;
 
+import com.studio.youtubcom.models.Order;
 import com.studio.youtubcom.models.Post;
+import com.studio.youtubcom.models.User;
+import com.studio.youtubcom.repository.OrderRepository;
 import com.studio.youtubcom.repository.PostRepository;
+import com.studio.youtubcom.repository.UserRepository;
 import com.studio.youtubcom.security.details.UserDetailsImpl;
+import com.sun.xml.bind.v2.TODO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.security.core.Authentication;
 
 import org.springframework.stereotype.Controller;
@@ -14,12 +20,31 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.*;
 
 
 @Controller
 @RequestMapping
 public class AuthController {
+    private final UserRepository repository;
+    private final OrderRepository orderRepository;
 
+    public AuthController(OrderRepository orderRepository, UserRepository repository) {
+        this.orderRepository = orderRepository;
+        this.repository = repository;
+    }
+    @PostMapping("/orderuser")
+    public String orderUser(Order order) {
+        Date datetoday = new Date();
+        Order order1 = Order.builder()
+                .username(order.getUsername())
+                .phone(order.getPhone())
+                .text(order.getText())
+                .date(datetoday)
+                .build();
+        orderRepository.save(order1);
+        return "okay";
+    }
     @GetMapping("/login")
     public String getLoginPage(Authentication authentication, ModelMap model, HttpServletRequest request) {
 
@@ -32,7 +57,6 @@ public class AuthController {
         return "login";
     }
 
-
     @PostMapping("/logout")
     public String postLogout(Model model) {
 //        model.addAttribute("title", true);
@@ -40,14 +64,45 @@ public class AuthController {
     }
 
     @GetMapping("/success")
-    public String getSuccessPage(Authentication authentication) {
+    public String getSuccessPage(Authentication authentication, Model model) {
         UserDetailsImpl details = (UserDetailsImpl) authentication.getPrincipal();
         String userRole = details.getAuthorities().toString();
         if (userRole.equals("[ADMIN]") || userRole.equals("ADMIN")) {
+
+            List<User> listUser = repository.findAll();
+            model.addAttribute("listUser", listUser);
+
+            List<Order> listOrder = orderRepository.findAll();
+            model.addAttribute("listOrder", listOrder);
+
             System.out.println(userRole + details.getUsername() + details.getAuthorities() + " is enter us ADMIN");
             return "blog-main";
         }
         if (userRole.equals("[USER]") || userRole.equals("USER")) {
+
+//            Optional<User> user = repository.findOneByEmail(authentication.getName());
+//            System.out.println(user.toString());
+//            List<Order> all = orderRepository.findAll();
+//            System.out.println(all.toString());
+
+//            TODO good Work
+//            Optional<User> users = repository.findOneByEmail(authentication.getName());
+//            List<User> listUser = new ArrayList<>();
+//            users.ifPresent(listUser::add);
+//            model.addAttribute("listUser", listUser);
+
+//            Optional<User> userauth = repository.findOneByEmail(authentication.getName());
+//
+//            model.addAttribute("orders", orders);
+//            System.out.println(orders.toString());
+
+
+//            List<Order> orders = orderRepository.findAll();
+//            model.addAttribute("orders", orders);
+
+//           Optional<User> listUser = repository.findOneByEmail(authentication.getName());
+//            model.addAttribute("listUser", listUser);
+//            System.out.println(listUser.toString());
             System.out.println(userRole + details.getUsername() + details.getAuthorities() + " is enter us USER");
             return "success";
         } else {

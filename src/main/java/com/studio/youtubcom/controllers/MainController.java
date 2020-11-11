@@ -29,9 +29,13 @@ public class MainController {
 //        model.addAttribute("title", "Сторінка про нас");
 //        return "about";
 //    }
-    @GetMapping("/about")
-    public String about() {
-        return "/about";
+//    @GetMapping("/about")
+//    public String about() {
+//        return "/about";
+//    }
+    @GetMapping("/news")
+    public String news() {
+        return "news";
     }
     @GetMapping("/pagePrice")
     public String pagePrace() {

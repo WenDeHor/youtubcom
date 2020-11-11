@@ -4,6 +4,7 @@
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
     <title th:text="${title}"></title>
+    <title th:text="${user}"></title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <!--   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">-->
     <!--    CSS-->
@@ -30,23 +31,40 @@
 <br>
 
 <div class="container">
-    <h1>Сторінка замовлень</h1>
 
-    <!--    <form action="/logout" >-->
-    <form  action="/logout" method="POST">
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Logout</button>
+    <form action="/logout" method="POST">
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Покинути особистий кабінет</button>
     </form>
-<!--    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>-->
-<!--    <ul class="navbar-nav d-none d-lg-flex ml-2 order-3">-->
-<!--    <li class="nav-item"><a class="nav-link" href="/login">Sign in</a></li>-->
-    <div class="container">
-        <h1>Registration and Login with Spring Boot, Spring Security,
-            Thymeleaf, Hibernate and MySQL</h1>
-<!--        Welcome <span sec:authentication="principal.getUsername().toString()"> Username</span>-->
-<!--        Welcome <span sec:authentication="principal.getAuthorities().toString()"> Authorities</span>-->
-<!--        Welcome <span sec:authentication="principal.getPassword().toString()"> Password</span>-->
-<!--        Welcome <span sec:authentication="principal.isEnabled().toString()"> Enabled</span>-->
-    </div>
+    <h2>Сторінка замовлень</h2>
+    <form class="form-signin" method="post" action="/orderuser">
+
+        <p>
+            <label for="username">Вкажіть ім'я отримувача</label>
+            <input type="text" id="username" name="username" class="form-control"
+                   placeholder="Імя отримувача" required>
+        </p>
+        <p>
+            <label for="phone">Вкажіть телефон отримувача</label>
+            <input type="text" id="phone" name="phone" class="form-control" placeholder="Телефон отримувача"
+                   required>
+        </p>
+        <p>
+            <label for="text">Що Вам підібрати та надіслати та на яку адресу </label>
+            <input type="text" id="text" name="text" class="form-control" placeholder="Вкажіть замовлення"
+                   required>
+        </p>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Зробити замовлення</button>
+        <br>
+        <br>
+
+        <h5> При замовлені пилку до 10 кг - 110 грн/кг. При замовлені пилку від 10 кг - 90 грн/кг</h5>
+        <h5> При замовлені від 1000 грн - доставка безкоштовна
+            Відправлення здійснюється Новою Поштою та Укр-поштою, по всій території України. Оплата
+            при отриманні</h5>
+
+    </form>
+
+
 </div>
 <footer th:insert="blocks/footer-first::footer-first"></footer>
 </html>
